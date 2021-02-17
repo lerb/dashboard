@@ -1,3 +1,6 @@
+This is a clone of dashboard by phntxx. My intention is to personalize this dashboard and make it work to my liking, and also do some swedish localization.
+You can find the original by phntxx here: https://github.com/phntxx/dashboard
+
 # Dashboard
 
 ![Alt text](/screenshot.png?raw=true 'screenshot')
