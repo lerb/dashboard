@@ -102,7 +102,7 @@ const Imprint = () => {
     <>
       {!error ? (
         <ListContainer>
-          <Hl>About</Hl>
+          <Hl>Om</Hl>
           <ItemList>
             <ItemContainer>
               <SHl>Imprint</SHl>

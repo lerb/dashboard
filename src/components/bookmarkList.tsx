@@ -41,7 +41,7 @@ const BookmarkList = () => {
     } = useBookmarkData();
     return (
         <ListContainer>
-            <Headline>Bookmarks</Headline>
+            <Headline>Länkar</Headline>
             {error && <ErrorMessage>{error}</ErrorMessage>}
             <ItemList>
                 {groups.map(({ name, items }, idx) => (
