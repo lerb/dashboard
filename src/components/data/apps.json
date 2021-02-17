@@ -27,21 +27,21 @@
                     "icon": "bar_chart"
                 },
                 {
-                    "name": "Grafana",
+                    "name": "Plex",
                     "displayURL": "example.com",
                     "URL": "https://example.com",
-                    "icon": "show_chart"
+                    "icon": "tv"
+                },
+1			    {
+                    "name": "Portainer",
+                    "displayURL": "example.com",
+                    "URL": "https://example.com",
+                    "icon": "dns"
                 }
             ]
         }
     ],
     "apps": [
-        {
-            "name": "Plex",
-            "displayURL": "example.com",
-            "URL": "https://example.com",
-            "icon": "tv"
-        },
         {
             "name": "NextCloud",
             "displayURL": "example.com",
@@ -55,12 +55,17 @@
             "icon": "rss_feed"
         },
         {
+            "name": "Bitwarden",
+            "displayURL": "example.com",
+            "URL": "https://example.com",
+            "icon": "lock"
+        },		
+        {
             "name": "Minecraft",
             "displayURL": "example.com",
             "URL": "https://example.com",
-            "icon": "games"
+            "icon": "videogame_asset"
         },
-
         {
             "name": "ESXi",
             "displayURL": "example.com",
@@ -69,4 +74,3 @@
         }
     ]
 }
-

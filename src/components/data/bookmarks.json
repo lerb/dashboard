@@ -1,49 +1,53 @@
 {
     "groups": [
         {
-            "name": "Wikis",
+            "name": "Media",
             "items": [
                 {
-                    "name": "Wikipedia",
-                    "url": "https://en.wikipedia.org/"
+                    "name": "FZ",
+                    "url": "https://www.fz.se"
                 },
                 {
-                    "name": "Arch Linux Wiki",
-                    "url": "https://archlinux.org/"
-                }
+                    "name": "Feber",
+                    "url": "https://www.feber.se"
+                },
+                {
+                    "name": "Omni",
+                    "url": "https://omni.se"
+                }				
             ]
         },
         {
             "name": "Dev",
             "items": [
                 {
-                    "name": "Codepen",
-                    "url": "https://codepen.io/"
+                    "name": "GitHub",
+                    "url": "https://github.com"
                 },
                 {
-                    "name": "JSFiddle",
-                    "url": "https://jsfiddle.net/"
+                    "name": "DockerHub",
+                    "url": "https://hub.docker.com"
                 },
                 {
-                    "name": "Pastebin",
-                    "url": "https://pastebin.com/"
-                }
+                    "name": "Material Design",
+                    "url": "https://material.io"
+                }				
             ]
         },
         {
-            "name": "Media",
+            "name": "World of Warcraft",
             "items": [
                 {
-                    "name": "Soundcloud",
-                    "url": "https://soundcloud.com"
+                    "name": "Wowhead",
+                    "url": "https://www.wowhead.com"
                 },
                 {
-                    "name": "YouTube",
-                    "url": "https://youtube.com"
+                    "name": "WarcraftLogs",
+                    "url": "https://www.warcraftlogs.com"
                 },
                 {
-                    "name": "Twitch",
-                    "url": "https://twitch.tv"
+                    "name": "Raider.io",
+                    "url": "https://raider.io"
                 }
             ]
         },
@@ -51,47 +55,13 @@
             "name": "Sociala Nätverk",
             "items": [
                 {
-                    "name": "Facebook",
-                    "url": "https://facebook.com"
+                    "name": "Discord",
+                    "url": "https://discord.com"
                 },
-                {
-                    "name": "Twitter",
-                    "url": "https://twitter.com"
-                },
-                {
-                    "name": "Instagram",
-                    "url": "https://instagram.com"
-                }
-            ]
-        },
-        {
-            "name": "Imageboards",
-            "items": [
                 {
                     "name": "Reddit",
-                    "url": "https://reddit.com"
-                },
-                {
-                    "name": "4chan",
-                    "url": "https://4chan.org"
-                }
-            ]
-        },
-        {
-            "name": "Tech",
-            "items": [
-                {
-                    "name": "Hackernoon",
-                    "url": "https://hackernoon.com"
-                },
-                {
-                    "name": "The Verge",
-                    "url": "https://theverge.com"
-                },
-                {
-                    "name": "Hackernews",
-                    "url": "https://news.ycombinator.com"
-                }
+                    "url": "https://www.reddit.com"
+                }		
             ]
         }
     ]
