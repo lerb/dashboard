@@ -1,226 +1,26 @@
-This is a clone of dashboard by phntxx. My intention is to personalize this dashboard and make it work to my liking, while learning the ropes of GitHub. I'm new to GitHub as this is my first project so I hope I'm doing things right.
-You can find the original by phntxx here: https://github.com/phntxx/dashboard
-
 # Dashboard
 
-![Alt text](/screenshot.png?raw=true 'screenshot')
+Dashboard is originally created by user phntxx, and is inspired by SUI.
+This version is simply a test-project for me to get used to GitHub and DockerHub.
 
-Dashboard is just that - a dashboard. It's inspired by [SUI](https://github.com/jeroenpardon/sui) and has all the same features as SUI, such as simple customization through JSON-files and a handy search bar to search the internet more efficiently.
+You can find phntxx's version here: https://github.com/phntxx/dashboard
 
-## Features
+## Installation using docker on Synology NAS
 
-So what makes this thing better than SUI?
-
--   "Display URL" functionality, in case the URL you want to show is different than the URL you want to be redirected to
--   Theming through JSON
--   Search providers customizable through JSON (SUI has them both in a JSON and hardcoded)
-
-## Installation
-
-Getting Dashboard to run is fairly simple and can be accomplished with two techniques:
-
-1. Locally
-
-Prerequisites: yarn, npm, node
-
-```
-$ git clone https://github.com/phntxx/dashboard.git
-$ cd dashboard/
-$ yarn
-$ yarn build
-$ yarn serve:production
-```
-
-2. Using Docker
-
-```
-$ docker run -d \
-	-v $(pwd)/data:/app/data
-	-p 3000:3000 \
-	--name dashboard \
-	phntxx/dashboard
-```
-
-Sample Docker Compose configuration:
-
-```
-version: "3"
-
-services:
-	dashboard:
-		image: phntxx/dashboard:latest
-		restart: unless-stopped
-		volumes:
-			- [path to data directory]:/app/data
-		ports:
-			- 3000:3000
-```
-
-**Note: You might still need to clone the repository in order to get the JSON-files which are required for the
-app to run**
+1. Clone this repository in order to get the JSON-files required for the app to run (apps, bookmarks, imprint, search and themes - all located in /data)
+2. Download the image through Docker on your NAS (search for it in the Registry) or pull it with Portainer if you have that set up
+3. Launch the downloaded image
+4. Give it a name, then click on Advanced Settings.
+5. Under "Advanced Settings", enable auto-restart if you fancy that.
+6. Under "Volume", press Add Folder and browse to the folder you want to put the JSON-files in (these are the files you will be customizing the dashboard with)
+7. Set Mount Path to "/app/data"
+8. Under "Port settings" change both Auto to correspond to the ports on the right side - or any other ports if you fancy that.
+9. Upload the files from step 1 (apps.json, bookmarks.json, imprint.json, search.json and themes.json) to the folder you specified in step 6
+10. Launch and start the container. Done!
 
 ## Customization
 
-Dashboard is designed to be customizable. Everything is handled using four .json-files, which can be found at /src/components/data
+To customize the content on the dashboard, download the JSON-file you want to change (for example, apps.json), edit it locally with a text editor like notepad++, and upload it again to your NAS - overwriting the old file.
+Please note that the files used for customization are the ones in /dashboard/data. NOT the ones in /dashboard/src/components/data.
 
-### Applications
-
-To add an application, append the following to apps.json or simply edit one of the examples given.
-
-```
-{
-	"name": "[Name of the Application]",
-	"displayURL": "[URL you want to show]",
-	"URL": "[URL to redirect to]",
-	"icon": "[Icon code]"
-}
-...
-```
-
-To find icons, simply go to the [Material Design Icon Library](https://material.io/icons/) and copy one of the codes for an icon there.
-
-**NEW FEATURE: CATEGORIES**
-
-To add a category to your dashboard, change apps.json to resemble the following:
-
-```
-{
-	"categories": [
-		...
-	],
-	"apps": [
-		...
-	]
-}
-
-```
-
-Then, a category can be added by entering the following within the "categories" field:
-
-```
-{
-	"name": "[Name of the category]",
-	"items": [
-		[Application goes here]
-	]
-}
-```
-
-In the end, your apps.json file should look something like this:
-
-1. Without categories
-
-```
-{
-	"apps": [
-		{
-			"name": "[Name of the Application]",
-			"displayURL": "[URL you want to show]",
-			"URL": "[URL to redirect to]",
-			"icon": "[Icon code]"
-		},
-		{
-		"name": "[Name of the Application]",
-		"displayURL": "[URL you want to show]",
-		"URL": "[URL to redirect to]",
-		"icon": "[Icon code]"
-		},
-		...
-	]
-}
-```
-
-2. With apps and categories
-
-```
-{
-	"categories": [
-		{
-			"name": "[Name of the category]",
-			"items": [
-				{
-					"name": "[Name of the Application]",
-					"displayURL": "[URL you want to show]",
-					"URL": "[URL to redirect to]",
-					"icon": "[Icon code]"
-				},
-				{
-					"name": "[Name of the Application]",
-					"displayURL": "[URL you want to show]",
-					"URL": "[URL to redirect to]",
-					"icon": "[Icon code]"
-				},
-				...
-			]
-		},
-		...
-	],
-	"apps": [
-		{
-			"name": "[Name of the Application]",
-			"displayURL": "[URL you want to show]",
-			"URL": "[URL to redirect to]",
-			"icon": "[Icon code]"
-		},
-		{
-			"name": "[Name of the Application]",
-			"displayURL": "[URL you want to show]",
-			"URL": "[URL to redirect to]",
-			"icon": "[Icon code]"
-		},
-		...
-	]
-}
-```
-
-### Bookmarks
-
-To add a bookmark, append the following to bookmarks.json or simply edit one of the examples given.
-
-```
-{
-	"name": "[Category name]",
-	"items": [
-		{
-		"name": "[Bookmark name]",
-		"url": "[URL to redirect to]"
-		},
-		{
-		"name": "[Bookmark name]",
-		"url": "[URL to redirect to]"
-		},
-		{
-		"name": "[Bookmark name]",
-		"url": "[URL to redirect to]"
-		}
-		...
-	]
-},
-...
-```
-
-### Theming:
-
-Dashboard also supports themes with the help of a simple JSON-file: themes.json. To add a theme, append the following to themes.json:
-
-```
-{
-	"label": "[Theme Name]",
-	"value": [Number of the theme],
-	"mainColor": "[Main Color as 6-character hex code]",
-	"accentColor": "[Accent Color as 6-character hex code]",
-	"backgroundColor": "[Background Color as 6-character hex code]"
-}
-```
-
-### Search Providers:
-
-The searchbar on the top supports shortcuts like "/so", just as SUI does. To add one of your own, simply append the following to search.json
-
-```
-{
-	"name":"[Name of the website]",
-	"url":"[Link that processes searches on that website]",
-	"prefix":"[a custom prefix]"
-},
-```
+To find icons to use, browse https://material.io/icons/
