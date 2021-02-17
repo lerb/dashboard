@@ -1,4 +1,4 @@
-This is a clone of dashboard by phntxx. My intention is to personalize this dashboard and make it work to my liking, and also do some swedish localization.
+This is a clone of dashboard by phntxx. My intention is to personalize this dashboard and make it work to my liking, while learning the ropes of GitHub. I'm new to GitHub as this is my first project so I hope I'm doing things right.
 You can find the original by phntxx here: https://github.com/phntxx/dashboard
 
 # Dashboard
