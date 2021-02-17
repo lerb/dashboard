@@ -5,23 +5,23 @@
             "items": [
                 {
                     "name": "Router",
-                    "displayURL": "D-Link EXO DIR-882 AC2600",
-                    "URL": "http://192.168.0.1/info/Login.html",
+                    "displayURL": "example.com",
+                    "URL": "https://example.com",
                     "icon": "router"
                 },
                 {
                     "name": "NAS",
-                    "displayURL": "Synology DS218+",
-                    "URL": "https://lerb.quickconnect.to",
+                    "displayURL": "example.com",
+                    "URL": "https://example.com",
                     "icon": "storage"
                 }
             ]
         },
         {
-            "name": "Monitoring",
+            "name": "Appar",
             "items": [
                 {
-                    "name": "Tautulli",
+                    "name": "PiHole",
                     "displayURL": "example.com",
                     "URL": "https://example.com",
                     "icon": "bar_chart"
