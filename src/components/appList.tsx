@@ -40,7 +40,7 @@ const AppList = () => {
 
   return (
     <ListContainer>
-      <Headline>GENVÄGAR</Headline>
+      <Headline>Genvägar</Headline>
       {error && <ErrorMessage>{error}</ErrorMessage>}
       {categories &&
         categories.map(({ name, items }, idx) => (
